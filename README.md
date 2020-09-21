@@ -7,3 +7,4 @@
 - cni v0.8.7
 - etcd v3.4.13
 - NGINX v1.19 (Loadbalancer)
+- ชุด IP ภายใน Cluster 10.96.0.0/24
