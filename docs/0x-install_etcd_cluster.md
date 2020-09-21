@@ -1,6 +1,6 @@
 # ติดตั้ง etcd
 
-etcd กจะถูกติดตั้งที่ master node ในเอกสารชุดนี้จะกำหนดค่าให้ etcd ทำงานในรูปแบบ High Availability และคำนึงถึงความปลอดภัยในการเชื่อมต่อ หากต้องการข้อมูลเพิ่มเติมได้ที่ [etcd](https://github.com/etcd-io/etcd)
+etcd จะถูกติดตั้งที่ master node ในเอกสารชุดนี้จะกำหนดค่าให้ etcd ทำงานในรูปแบบ High Availability และคำนึงถึงความปลอดภัยในการเชื่อมต่อ หากต้องการข้อมูลเพิ่มเติมได้ที่ [etcd](https://github.com/etcd-io/etcd)
 
 
 ## เตรียม etcd binaries [all master node]
