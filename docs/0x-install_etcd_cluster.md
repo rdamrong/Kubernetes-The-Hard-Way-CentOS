@@ -71,7 +71,7 @@ WantedBy=multi-user.target
 EOF
 }
 ```
-## เริ่ม start etcd และทดสอบ [all master node]
+## เริ่มการทำงานของ etcd และทดสอบ [all master node]
 ```
 {
  systemctl daemon-reload
