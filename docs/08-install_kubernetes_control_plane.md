@@ -134,5 +134,30 @@ systemctl enable --now   kube-apiserver kube-controller-manager kube-scheduler
 ```
 ## ทดสอบและผลทดสอบ [master0]
 ```
-kubectl get componentstatuses --kubeconfig admin.kubeconfig
+kubectl get --raw='/readyz?verbose' --kubeconfig=admin.kubeconfig
+```
+> ผลการทดสอบ
+```
+[+]ping ok
+[+]log ok
+[+]etcd ok
+[+]informer-sync ok
+[+]poststarthook/start-kube-apiserver-admission-initializer ok
+[+]poststarthook/generic-apiserver-start-informers ok
+[+]poststarthook/start-apiextensions-informers ok
+[+]poststarthook/start-apiextensions-controllers ok
+[+]poststarthook/crd-informer-synced ok
+[+]poststarthook/bootstrap-controller ok
+[+]poststarthook/rbac/bootstrap-roles ok
+[+]poststarthook/scheduling/bootstrap-system-priority-classes ok
+[+]poststarthook/priority-and-fairness-config-producer ok
+[+]poststarthook/start-cluster-authentication-info-controller ok
+[+]poststarthook/start-kube-aggregator-informers ok
+[+]poststarthook/apiservice-registration-controller ok
+[+]poststarthook/apiservice-status-available-controller ok
+[+]poststarthook/kube-apiserver-autoregistration ok
+[+]autoregister-completion ok
+[+]poststarthook/apiservice-openapi-controller ok
+[+]shutdown ok
+healthz check passed
 ```
