@@ -3,7 +3,7 @@
 etcd กจะถูกติดตั้งที่ master node ในเอกสารชุดนี้จะกำหนดค่าให้ etcd ทำงานในรูปแบบ High Availability และคำนึงถึงความปลอดภัยในการเชื่อมต่อ หากต้องการข้อมูลเพิ่มเติมได้ที่ [etcd](https://github.com/etcd-io/etcd)
 
 
-## เตรียม etcd binaries
+## เตรียม etcd binaries [all master node]
 ```
 {
 ETCD_VER=v3.4.13
@@ -19,7 +19,7 @@ ETCDCTL_API=3 /tmp/etcd-download-test/etcdctl version
 mv /tmp/etcd-download-test/etcd* /usr/local/bin
 }
 ```
-## เตรียม directory และ key pair ที่ใช้ในการทำงานของ etcd
+## เตรียม directory และ key pair ที่ใช้ในการทำงานของ etcd [all master node]
 ```
 {
  sudo mkdir -p /etc/etcd /var/lib/etcd
@@ -27,7 +27,7 @@ mv /tmp/etcd-download-test/etcd* /usr/local/bin
  cp ca.crt etcd-server.key etcd-server.crt /etc/etcd/
 }
 ```
-## เตรียมตัวแปรสำหรับสร้าง `etcd.service`
+## เตรียมตัวแปรสำหรับสร้าง `etcd.service` [all master node]
 ```
 {
 INTERNAL_IP=$(ip addr show eth0 | grep "inet " | awk '{print $2}' | cut -d / -f 1)
@@ -36,7 +36,7 @@ echo $INTERNAL_IP $ETCD_NAME
 }
 ```
 *# eth0 เป็นชื่อ network interface card ซึ่งอาจจะต่างกันไป* 
-## สร้าง `etcd.service` สำหรับ systemd
+## สร้าง `etcd.service` สำหรับ systemd [all master node]
 ```
 {
 cat <<EOF | sudo tee /etc/systemd/system/etcd.service
@@ -71,7 +71,7 @@ WantedBy=multi-user.target
 EOF
 }
 ```
-## เริ่ม start etcd และทดสอบ
+## เริ่ม start etcd และทดสอบ [all master node]
 ```
 {
  systemctl daemon-reload
