@@ -1,7 +1,7 @@
 # ติดตั้ง Kubernetes Control Plane
 
 kube-apiserver, kube-controller-manager, kube-scheduler เป็นองค์ประกอบสำคัญของการทำงานของ master node และติดตั้ง kubectl ที่เป็น Kubenetes Client ที่จะเชื่อมต่อกับ Kubenetes Cluster ในเบื้องต้นเพื่อสร้างส่วนที่จำเป็นภายใน Kubenetes Cluster 
-## เตรียม Kubenetes Controller binaries 
+## เตรียม Kubenetes Controller binaries [all master node]
 ```
 {
 DL=https://dl.k8s.io/v1.19.0/kubernetes-server-linux-amd64.tar.gz
@@ -14,7 +14,7 @@ mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/
 cd
 }
 ```
-## เตรียม directory, key pair และข้่อมูล ที่ใช้ในการทำงานของ Kubernetes Controller
+## เตรียม directory, key pair และข้่อมูล ที่ใช้ในการทำงานของ Kubernetes Controller [all master node]
 ```
 mkdir -p /etc/kubernetes/config
 mkdir -p /var/lib/kubernetes/
@@ -27,7 +27,7 @@ cp kube-scheduler.kubeconfig /var/lib/kubernetes/
 INTERNAL_IP=$(ip addr show eth0| grep "inet " | awk '{print $2}' | cut -d / -f 1)
 echo $INTERNAL_IP
 ```
-## สร้าง `kube-apiserver.service` สำหรับ systemd
+## สร้าง `kube-apiserver.service` สำหรับ systemd [all master node]
 ```
 cat <<EOF | sudo tee /etc/systemd/system/kube-apiserver.service
 [Unit]
@@ -72,7 +72,7 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-## สร้าง `kube-controller-manager.service` สำหรับ systemd
+## สร้าง `kube-controller-manager.service` สำหรับ systemd [all master node]
 ```
 cat <<EOF | sudo tee /etc/systemd/system/kube-controller-manager.service
 [Unit]
@@ -100,7 +100,7 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-## สร้าง `kube-scheduler.service` สำหรับ systemd
+## สร้าง `kube-scheduler.service` สำหรับ systemd [all master node]
 ```
 cat <<EOF | sudo tee /etc/kubernetes/config/kube-scheduler.yaml
 apiVersion: kubescheduler.config.k8s.io/v1beta1
@@ -127,12 +127,12 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-## เริ่มการทำงานของ kube-apiserver, kube-controller-manager และ kube-scheduler
+## เริ่มการทำงานของ kube-apiserver, kube-controller-manager และ kube-scheduler [all master node]
 ```
 systemctl daemon-reload
 systemctl enable --now   kube-apiserver kube-controller-manager kube-scheduler
 ```
-## ทดสอบและผลทดสอบ
+## ทดสอบและผลทดสอบ [master0]
 ```
 kubectl get componentstatuses --kubeconfig admin.kubeconfig
 ```
