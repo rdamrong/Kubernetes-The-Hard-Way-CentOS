@@ -68,26 +68,25 @@ WantedBy=multi-user.target
 EOF
 }
 ```
-## เริ่มการทำงานของ etcd และทดสอบ [all master node]
+## เริ่มการทำงานของ etcd [all master node]
 ```
 {
  systemctl daemon-reload
  systemctl enable --now etcd
+}
+```
 
+
+## ทดสอบการทำงานของ etcd [all master node]
+```
 ETCDCTL_API=3 etcdctl member list \
  --endpoints=https://127.0.0.1:2379 \
  --cacert=/etc/etcd/ca.crt \
  --cert=/etc/etcd/etcd-server.crt \
  --key=/etc/etcd/etcd-server.key
-}
-```
-## ผลการทดสอบ [all master node]
-```
-]# ETCDCTL_API=3 etcdctl member list \
- --endpoints=https://127.0.0.1:2379 \
- --cacert=/etc/etcd/ca.crt \
- --cert=/etc/etcd/etcd-server.crt \
- --key=/etc/etcd/etcd-server.key
+ ```
+ > ผลการทดสอบ
+ ```
 41cf2dc7f859bfed, started, master2, https://192.168.254.63:2380, https://192.168.254.63:2379, false
 8283bd82ad10dcb8, started, master1, https://192.168.254.62:2380, https://192.168.254.62:2379, false
 fcae0ac3856fb516, started, master0, https://192.168.254.61:2380, https://192.168.254.61:2379, false
