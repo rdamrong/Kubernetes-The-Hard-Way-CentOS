@@ -132,7 +132,7 @@ EOF
 systemctl daemon-reload
 systemctl enable --now   kube-apiserver kube-controller-manager kube-scheduler
 ```
-## ทดสอบและผลทดสอบ [master0]
+## ทดสอบและผลทดสอบของ kube-apiserver [all master node]
 ```
 kubectl get --raw='/readyz?verbose' --kubeconfig=admin.kubeconfig
 ```
