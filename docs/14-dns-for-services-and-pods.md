@@ -5,8 +5,7 @@
 ```
 dnf install -y git jq
 git clone https://github.com/coredns/deployment.git
-cd deployment/
-cd kubernetes/
+cd deployment/kubernetes/
 ./deploy.sh -i 10.96.0.10 | kubectl apply -f -
 ```
 ### ตรวจสอบการติดตั้งของ CoreDNS
