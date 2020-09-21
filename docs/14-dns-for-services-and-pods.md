@@ -1,5 +1,5 @@
 # ติดตั้ง DNS สำหรับ Services และ Pods
-ทุก services ที่ถูกสร้างภายใน Cluster จะได้มีชื่อนั้นถูกกำหนดใน DNS เช่นกัน ทำให้สามาถใช้ชื่อในการอ้างถึง service ได้โดยมีรูปแบบ `***servicename***.***namespace***.svc.cluster.local` ในเอกสารชุดนี้จะใช้ [CoreDNS](https://coredns.io/) ทำหน้าที่นี้
+ทุก services ที่ถูกสร้างภายใน Cluster จะได้มีชื่อนั้นถูกกำหนดใน DNS เช่นกัน ทำให้สามาถใช้ชื่อในการอ้างถึง service ได้โดยมีรูปแบบ `*** servicename***.*** namespace***.svc.cluster.local` ในเอกสารชุดนี้จะใช้ [CoreDNS](https://coredns.io/) ทำหน้าที่นี้
 
 ## ติดตั้ง CoreDNS
 ```
