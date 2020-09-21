@@ -44,6 +44,13 @@ The key's randomart image is:
 ```
 ## Virtual Machine
 ใน lab ของผู้เขียนใช้ [oVirt](https://www.ovirt.org/) เป็นเครื่องมือในการจัดการ ซึ่งแต่ละคนอาจจะใช้เครื่องมือที่ต่างกัน เช่น VirtualBox, VMWare Workstation, VMWare vSphere, VMWare vCenter, OpenStack, Azure Stack หรือจะเป็น Instance ที่ Public Cloud ก็ได้
-|Item|Hostname|IP|
-|--|--|--|
-|1|api.example.com|192.168.254.60|
+|Item|Hostname|IP|Function|
+|--|--|--|--|--|
+|1|api.example.com|192.168.254.60|Loadbalancer|
+|2|master0.example.com|192.168.254.61|Master|
+|3|master1.example.com|192.168.254.62|Master|
+|4|master2.example.com|192.168.254.63|Master|
+|5|node0.example.com|192.168.254.64|Worker|
+|6|node1.example.com|192.168.254.65|Worker|
+> - ทุกเครื่องจะมี 2 vCPU, Memory 2 GB, HDD 10 GB
+> - ติดตั้ง Docker เรียบร้อยแล้วทุกเครื่อง ยกเว้นเครื่อง Loadbalancer
