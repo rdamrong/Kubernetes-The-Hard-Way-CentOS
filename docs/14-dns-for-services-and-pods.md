@@ -8,7 +8,7 @@ git clone https://github.com/coredns/deployment.git
 cd deployment/kubernetes/
 ./deploy.sh -i 10.96.0.10 | kubectl apply -f -
 ```
-### ตรวจสอบการติดตั้งของ CoreDNS
+### ตรวจสอบการติดตั้งของ CoreDNS [master0]
 ```
 kubectl get pods -n kube-system
 ```
@@ -20,7 +20,7 @@ weave-net-c8wgm            2/2     Running   0          3m39s
 weave-net-lxwpn            2/2     Running   0          3m39s
 ```
 > จะพบว่ามี pod ที่ชื่อว่า coredns-xxxxxxxxxx-xxxxx สถานะ Running อยู่
-### ทดสอบการทำงานของ CoreDNS
+### ทดสอบการทำงานของ CoreDNS [master0]
 ```
 kubectl run busybox --image=busybox:1.28  -- sleep 20000
 kubectl exec busybox -- nslookup kubernetes
