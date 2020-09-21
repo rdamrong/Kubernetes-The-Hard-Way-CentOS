@@ -43,7 +43,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 ## Virtual Machine
-ใน lab ของผู้เขียนใช้ [oVirt](https://www.ovirt.org/) เป็นเครื่องมือในการจัดการ ซึ่งแต่ละคนอาจจะใช้เครื่องมือที่ต่างกัน เช่น VirtualBox, VMWare Workstation, VMWare vSphere, VMWare vCenter, OpenStack, Azure Stack หรือจะเป็น Instance ที่ Public Cloud ก็ได้
+ใน lab ของผู้เขียนใช้ [oVirt](https://www.ovirt.org/) เป็นเครื่องมือในการจัดการ ซึ่งแต่ละคนอาจจะใช้เครื่องมือที่ต่างกัน เช่น VirtualBox, VMWare Workstation, VMWare vSphere, VMWare vCenter, OpenStack, Azure Stack หรือจะเป็น Instance ที่ Public Cloud ก็ได้ ในการติดตั้งครั้งนี้ต้องการ Virtual Machine ทั้งหมด 6 เครื่องดังนี้
 |Item|Hostname|IP|Function|
 |----|--------|--|--------|
 |1|api.example.com|192.168.254.60|Loadbalancer|
@@ -53,6 +53,7 @@ The key's randomart image is:
 |5|node0.example.com|192.168.254.64|Worker|
 |6|node1.example.com|192.168.254.65|Worker|
 > - ทุกเครื่องจะมี 2 vCPU, Memory 2 GB, HDD 10 GB
+> - ทุกเครื่องมีระบบปฏิบัติการ CentOS 8.2
 > - ติดตั้ง Docker เรียบร้อยแล้วทุกเครื่อง ยกเว้นเครื่อง Loadbalancer
 > - ทุกเครื่องสามารถใช้ SSH Key-Based Authentication ได้
 ### ตัวอย่างการโอนถ่าย Public Key ไปยังเครื่อง Virtual Machine เพื่อให้สามารถทำ SSH Key-Based Authentication ได้
