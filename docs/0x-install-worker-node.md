@@ -19,7 +19,7 @@ cd kubernetes/node/bin/
 mv kubectl kube-proxy kubelet /usr/local/bin/
 cd
 ```
-
+## เตรียมข้อมูลที่ใช้ในการทำงานของ kubelet
 ```
 cp ${HOSTNAME}.key ${HOSTNAME}.crt /var/lib/kubelet/
 cp ${HOSTNAME}.kubeconfig /var/lib/kubelet/kubeconfig
@@ -45,8 +45,9 @@ runtimeRequestTimeout: "15m"
 tlsCertFile: "/var/lib/kubelet/${HOSTNAME}.crt"
 tlsPrivateKeyFile: "/var/lib/kubelet/${HOSTNAME}.key"
 EOF
-
-
+```
+## สร้าง kubelet.service สำหรับ systemd
+```
 cat <<EOF | sudo tee /etc/systemd/system/kubelet.service
 [Unit]
 Description=Kubernetes Kubelet
@@ -71,7 +72,7 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-
+## เตรียมข้อมูลที่ใช้ในการทำงานของ kube-proxy
 ```
 cp kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 cat <<EOF | sudo tee /var/lib/kube-proxy/kube-proxy-config.yaml
@@ -82,8 +83,9 @@ clientConnection:
 mode: "iptables"
 clusterCIDR: "10.0.0.0/16"
 EOF
-
-
+```
+## สร้าง kube-proxy.service สำหรับ systemd
+```
 cat <<EOF | sudo tee /etc/systemd/system/kube-proxy.service
 [Unit]
 Description=Kubernetes Kube Proxy
@@ -99,12 +101,12 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-
+## เริ่มการทำงานของ kubelet และ kube-proxy
 ```
 systemctl daemon-reload
 systemctl enable kubelet kube-proxy --now
 ```
-
+## ทดสอบและผลการทดสอบ
 ```
 kubectl get nodes --kubeconfig admin.kubeconfig -o wide
 ```
