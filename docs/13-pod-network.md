@@ -13,4 +13,20 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 ```
 kubectl get pods -n kube-system
 ```
+> ผลการทดสอบ
+```
+NAME              READY   STATUS    RESTARTS   AGE
+weave-net-c8wgm   1/2     Running   0          35s
+weave-net-lxwpn   1/2     Running   0          35s
+```
 > จะพบว่ามี pod ที่ชื่อว่า weave-net-xxxxx ที่มีสถานะ Running ทำงานอยู่
+## ตรวจสอบสถานะของ Node [master0]
+```
+kubectl get nodes
+```
+> ผลการทดสอบ
+```
+NAME    STATUS   ROLES    AGE   VERSION
+node0   Ready    <none>   14m   v1.19.0
+node1   Ready    <none>   11m   v1.19.0
+```
