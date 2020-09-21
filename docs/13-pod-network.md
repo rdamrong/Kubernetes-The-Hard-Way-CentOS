@@ -9,7 +9,7 @@ tar xvfz cni-plugins-linux-amd64-v0.8.7.tgz  --directory /opt/cni/bin
 ```
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 ```
-ตรวจสอบการติดตั้ง weave [master0]
+## ตรวจสอบการติดตั้ง weave [master0]
 ```
 kubectl get pods -n kube-system
 ```
