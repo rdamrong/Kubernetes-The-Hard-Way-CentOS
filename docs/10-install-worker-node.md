@@ -110,4 +110,9 @@ systemctl enable kubelet kube-proxy --now
 ```
 kubectl get nodes --kubeconfig admin.kubeconfig -o wide
 ```
+>ผลการทดสอบ
+```
+NAME    STATUS     ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION                CONTAINER-RUNTIME
+node0   NotReady   <none>   18s   v1.19.0   192.168.254.64   <none>        CentOS Linux 8 (Core)   4.18.0-193.6.3.el8_2.x86_64   docker://19.3.13
+```
 > ผลที่ได้ สถานะของ node จะยังเป็น Not Ready เนื่องจาก ในส่วนของ Network ยังไม่ได้ถูกกำหนดค่า
