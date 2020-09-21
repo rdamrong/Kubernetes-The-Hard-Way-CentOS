@@ -110,3 +110,4 @@ systemctl enable kubelet kube-proxy --now
 ```
 kubectl get nodes --kubeconfig admin.kubeconfig -o wide
 ```
+*#ผลที่ได้ สถานะของ node จะยังเป็น Not Ready เนื่องจาก ในส่วนของ Network ยังไม่ได้ถูกกำหนดค่า
