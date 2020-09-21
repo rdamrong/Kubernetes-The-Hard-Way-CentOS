@@ -14,7 +14,7 @@ mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/
 cd
 }
 ```
-## เตรียม directory, key pair และข้่อมูล ที่ใช้ในการทำงานของ Kubernetes Controller [all master node]
+## เตรียม directory, key pair และข้อมูล ที่ใช้ในการทำงานของ Kubernetes Controller [all master node]
 ```
 mkdir -p /etc/kubernetes/config
 mkdir -p /var/lib/kubernetes/
