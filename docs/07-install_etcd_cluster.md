@@ -7,16 +7,13 @@ etcd ทำหน้าที่เก็บข้อมูลต่าง ๆ �
 ```
 {
 ETCD_VER=v3.4.13
-GOOGLE_URL=https://storage.googleapis.com/etcd
-DOWNLOAD_URL=${GOOGLE_URL}
-rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-rm -rf /tmp/etcd-download-test && mkdir -p /tmp/etcd-download-test
-curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1
-rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-/tmp/etcd-download-test/etcd --version
-ETCDCTL_API=3 /tmp/etcd-download-test/etcdctl version
-mv /tmp/etcd-download-test/etcd* /usr/local/bin
+DOWNLOAD_URL=https://storage.googleapis.com/etcd
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf etcd-${ETCD_VER}-linux-amd64.tar.gz
+mv etcd-${ETCD_VER}-linux-amd64/etcd* /usr/local/bin
+/usr/local/bin/etcd --version
+ETCDCTL_API=3 /usr/local/bin/etcdctl version
 }
 ```
 ## เตรียม directory และ key pair ที่ใช้ในการทำงานของ etcd [all master node]
