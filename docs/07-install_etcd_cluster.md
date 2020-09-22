@@ -19,7 +19,7 @@ ETCDCTL_API=3 /usr/local/bin/etcdctl version
 ## เตรียม directory และ key pair ที่ใช้ในการทำงานของ etcd [all master node]
 ```
 {
- sudo mkdir -p /etc/etcd /var/lib/etcd
+mkdir -p /etc/etcd /var/lib/etcd
  chmod 700 /var/lib/etcd 
  cp ca.crt etcd-server.key etcd-server.crt /etc/etcd/
 }
