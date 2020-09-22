@@ -52,7 +52,7 @@ The key's randomart image is:
 |4|master2.example.com|192.168.254.63|Master|
 |5|node0.example.com|192.168.254.64|Worker|
 |6|node1.example.com|192.168.254.65|Worker|
-> - ทุกเครื่องจะมี 2 vCPU, Memory 2 GB, HDD 10 GB
+> - ทุกเครื่องมี 2 vCPU, Memory 2 GB, HDD 10 GB
 > - ทุกเครื่องมีระบบปฏิบัติการ CentOS 8.2
 > - ติดตั้ง Docker เรียบร้อยแล้วทุกเครื่อง ยกเว้นเครื่อง Loadbalancer
 > - ทุกเครื่องสามารถใช้ SSH Key-Based Authentication ได้
