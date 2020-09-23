@@ -1,6 +1,6 @@
 # ติดตั้ง etcd
 
-etcd ทำหน้าที่เก็บข้อมูลต่าง ๆ ของ cluster ไม่ว่าจะเป็นข้อมูลของ cluster เอง และข้อมูลต่าง ๆ ขณะที่ Kubernetes กำลังทำงาน etcd จะถูกติดตั้งที่ master node ในเอกสารชุดนี้จะกำหนดค่าให้ etcd ทำงานในรูปแบบ High Availability และคำนึงถึงความปลอดภัยในการเชื่อมต่อ หากต้องการข้อมูลเพิ่มเติมได้ที่ [etcd](https://github.com/etcd-io/etcd)
+etcd ทำหน้าที่เก็บข้อมูลต่าง ๆ ของ cluster ไม่ว่าจะเป็นข้อมูลของ cluster เอง และข้อมูลสถานะขณะที่ Kubernetes กำลังทำงาน ในเอกสารชุดนี้ etcd จะถูกติดตั้งที่ master node และกำหนดค่าให้ etcd ทำงานในรูปแบบ High Availability และคำนึงถึงความปลอดภัยในการเชื่อมต่อ หากต้องการข้อมูลเพิ่มเติมได้ที่ [etcd](https://github.com/etcd-io/etcd)
 
 
 ## เตรียม etcd binaries [all master node]
