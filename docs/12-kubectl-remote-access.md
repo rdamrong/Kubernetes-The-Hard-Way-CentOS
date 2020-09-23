@@ -1,4 +1,4 @@
-# สร้าง kubeconfig สำหรับ remote access
+# สร้าง Kubernetes Configuration File สำหรับ remote access
 จากที่ผ่านมาใช้จะส่งค่า kubeconfig file ผ่าน option --kubeconfig กับ kubectl ในเอกสารฉบับนี้จะสร้าง kubeconfig file ให้อยู่ในตำแหน่งที่เป็น default ที่ไม่จำเป็นต้องระบุ -kubeconfig ซึ่งไฟล์นั้นจะถูกเก็บไว้ที่ $HOME/.kube/config ซึ่งสามารถสร้างที่ไหนก็ได้ที่สามารถติดตั้ง kubectl ได้ ไม่จำเป็นต้องสร้างหรือใช้งานจากภายใน Kubernetes Cluster 
 ```
 {
