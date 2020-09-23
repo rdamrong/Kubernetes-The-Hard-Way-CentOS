@@ -1,5 +1,5 @@
 # สร้าง Kubernetes Configuration Files สำหรับ Authentication
-Kubernetes Configuration Files หรืออาจจะเรียกสั้น ๆ ว่า kubeconfig ใช้้เพื่อให้ Client ระบุ Kubernetes API Server ว่า cluster ไหน IP อะไร ให้บริการ port อะไร ร่วมถึง CA Certicate ที่จะในตอนเชื่อมต่อแบบ TLS, ระบุ credential ในการเชื่อมต่อไปยัง Kubernetes API Server และสุดท้ายก็จะมี context ที่จะจับคู่ระหว่าง credential กับ cluster ว่าจะใช้ credentail ตัวไหน เชื่อมต่อไปยัง cluster ไหน 
+Kubernetes Configuration Files หรืออาจจะเรียกสั้น ๆ ว่า kubeconfig ใช้เพื่อให้ Client ระบุ Kubernetes API Server ว่า cluster ไหน IP อะไร ให้บริการ port อะไร ร่วมถึง CA Certicate ที่จะในตอนเชื่อมต่อแบบ TLS, ระบุ credential ในการเชื่อมต่อไปยัง Kubernetes API Server และสุดท้ายก็จะมี context ที่จะจับคู่ระหว่าง credential กับ cluster ว่าจะใช้ credentail ตัวไหน เชื่อมต่อไปยัง cluster ไหน 
 ## Kubernetes Configuration Files ต้องสร้างกี่ไฟล์
 จากหน้าที่ของ Kubernetes Configuration Files ในช่วงแรก ดังนั้นส่วนประกอบใดที่ต้องเชื่อมต่อกับ Kubernetes API Server ก็ต้องสร้าง Kubernetes Configuration Files เตรียมไว้
 ![Kubernetes and TLS Information](https://github.com/rdamrong/Kubernetes-The-Hard-Way-CentOS/blob/master/images/kube-component.png)
