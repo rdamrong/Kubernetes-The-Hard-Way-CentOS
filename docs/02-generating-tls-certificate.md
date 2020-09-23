@@ -8,6 +8,8 @@
 > ในเอกสาร version แรกจะเป็นไปตามแนวทางที่ผู้เขียนอ้างอิงถึงจะมีจุดสังเกตุอยู่ 2 จุด
 > - client key pair จาก kube-apiserver ไปยัง etcd จะใช้ key pair ของ etcd เองในการเชื่อมต่อ
 > - client key pair จาก kube-apiserver ไปยัง kubelet จะใช้ key pair ของ kube-apiserver ที่ใช้ทำเป็น server เองในการเชื่อมต่อ
+> - client key pair จาก kubelet ไปยัง kube-apiserver จะใช้ key pair ของ kubelet ที่ใช้ทำเป็น server เองในการเชื่อมต่อ
+
 ## สร้าง CA (Certficate Authority) [Admin Workstation]
 ประเด็นหนึ่งในการทำ Mutual Authentication แบบ Certificated based คือ Ceriticate ในฝั่ง Client จะต้องมี Digital Signature ที่ถูก sign จาก CA เดียวกับฝั่ง Server ดังนั้นการสร้าง CA key pair จึงเป็นขั้นตอนแรก และเครื่องมือที่จะช่วยในการสร้าง key pair ก็คือ `cfssl`
 ```
