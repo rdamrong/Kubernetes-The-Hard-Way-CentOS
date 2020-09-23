@@ -32,7 +32,7 @@ ETCD_NAME=$(hostname -s)
 echo $INTERNAL_IP $ETCD_NAME
 }
 ```
-*# eth0 เป็นชื่อ network interface card ซึ่งอาจจะต่างกันไป* 
+> eth0 เป็นชื่อ network interface card ซึ่งอาจจะต่างกันไป
 ## สร้าง `etcd.service` สำหรับ systemd [all master node]
 ```
 {
