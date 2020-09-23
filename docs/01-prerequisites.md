@@ -100,3 +100,5 @@ Server: Docker Engine - Community
   Version:          0.18.0
   GitCommit:        fec3683
 ```
+
+Next [แนวคิดในการสร้าง TLS Certicate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](docs/02-generating-tls-certificate.md)
