@@ -107,7 +107,7 @@ Server address: 10.32.0.5:8080
 Server name: dp1-6fc549dc58-zgrm5
 Date: 23/Sep/2020:15:27:01 +0000
 URI: /
-Request ID: 2afe05ccb6eb274e4a40f76394a81a39
+Request ID: 2afe05ccb6eb274e4a40f96394a81a39
 
 
 [root@pingtest /]# curl http://svc-np.default.svc.cluster.local:9090
