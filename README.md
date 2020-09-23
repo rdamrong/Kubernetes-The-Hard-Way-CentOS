@@ -24,7 +24,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 [06. โอนถ่ายไฟล์ที่สร้างไปยัง Virtual Machine](docs/06-transfer-file.md)
 
-[07, ติดตั้ง etcd](docs/07-install_etcd_cluster.md)
+[07. ติดตั้ง etcd](docs/07-install_etcd_cluster.md)
 
 [08. ติดตั้ง Kubernetes Control Plane](docs/08-install_kubernetes_control_plane.md)
 
@@ -34,7 +34,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 [11. Kubernetes Object Authorization](docs/11-kubernetes-object-authorization.md)
 
-[12, สร้าง kubeconfig สำหรับ remote access](docs/12-kubectl-remote-access.md)
+[12. สร้าง kubeconfig สำหรับ remote access](docs/12-kubectl-remote-access.md)
 
 [13. ติดตั้ง Network สำหรับ Pod](docs/13-pod-network.md)
 
