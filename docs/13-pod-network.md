@@ -20,7 +20,7 @@ weave-net-c8wgm   1/2     Running   0          35s
 weave-net-lxwpn   1/2     Running   0          35s
 ```
 > จะพบว่ามี pod ที่ชื่อว่า weave-net-xxxxx ที่มีสถานะ Running ทำงานอยู่
-## ตรวจสอบสถานะของ Woker Node [master0]
+## ตรวจสอบสถานะของ Worker Node [master0]
 ```
 kubectl get nodes
 ```
