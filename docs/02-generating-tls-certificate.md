@@ -309,3 +309,37 @@ mv service-account-key.pem service-account.key
 mv service-account.pem service-account.crt
 }
 ```
+### สร้าง etcd Server Key Pair
+```
+ETCD_HOSTNAMES=etcd0,etcd1,etcd2
+
+cat > etcd-server-csr.json <<EOF
+{
+  "CN": "etcd-server",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "TH",
+      "O": "Kubernetes",
+      "OU": "Kubernetes The Hard Way CentOS",
+      "ST": "Bangkok"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=192.168.254.61,192.168.254.62,192.168.254.63,127.0.0.1,${ETCD_HOSTNAMES} \
+  -profile=kubernetes \
+  etcd-server-csr.json | cfssljson -bare etcd-server
+
+mv etcd-server-key.pem etcd-server.key
+mv etcd-server.pem etcd-server.crt
+}
+```
