@@ -34,3 +34,6 @@ Address 1: 10.96.0.10 kube-dns.kube-system.svc.cluster.local
 Name:      kubernetes
 Address 1: 10.96.0.1 kubernetes.default.svc.cluster.local
 ```
+**Next>**
+
+**<Prev** [ติดตั้ง Network สำหรับ Pod](13-pod-network.md)
