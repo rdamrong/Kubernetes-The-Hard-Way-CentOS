@@ -12,7 +12,7 @@ cd deployment/kubernetes/
 ```
 kubectl get pods -n kube-system
 ```
-> ผลการทดสอบ
+> ผลการทดสอบ จะพบ pod ชื่อว่า coredns-xxxxxxxxxx-xxxxx สถานะ Running อยู่
 ```
 NAME                       READY   STATUS    RESTARTS   AGE
 coredns-7bf4bd64bd-zgtnf   1/1     Running   0          14s
