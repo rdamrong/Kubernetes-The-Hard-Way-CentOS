@@ -19,3 +19,6 @@ subjects:
 EOF
 }
 ```
+**Next>** [สร้าง kubeconfig สำหรับ remote access](12-kubectl-remote-access.md)
+
+**<Prev** [ติดตั้ง Kubernetes Worker Nodes](10-install-worker-node.md)
