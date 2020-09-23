@@ -311,6 +311,7 @@ mv service-account.pem service-account.crt
 ```
 ### สร้าง etcd Server Key Pair
 ```
+{
 ETCD_HOSTNAMES=etcd0,etcd1,etcd2
 
 cat > etcd-server-csr.json <<EOF
