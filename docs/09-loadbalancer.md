@@ -19,3 +19,6 @@ stream{
 " >> /etc/nginx/nginx.conf
 systemctl enable --now nginx
 ```
+**Next>** [ติดตั้ง Kubernetes Worker Nodes](10-install-worker-node.md)
+
+**<Prev** [ติดตั้ง etcd](07-install_etcd_cluster.md)
