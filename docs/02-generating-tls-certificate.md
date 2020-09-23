@@ -344,6 +344,6 @@ mv etcd-server-key.pem etcd-server.key
 mv etcd-server.pem etcd-server.crt
 }
 ```
-**Next** [สร้าง Kubernetes Configuration Files สำหรับ Authentication](03-generating-kubenetes-configuration-file.md)
+**Next>** [สร้าง Kubernetes Configuration Files สำหรับ Authentication](03-generating-kubenetes-configuration-file.md)
 
-**Prev** [รายละเอียดในการติดตั้ง](01-prerequisites.md)
+**<Prev** [รายละเอียดในการติดตั้ง](01-prerequisites.md)
