@@ -1,6 +1,6 @@
 # ติดตั้ง Kubernetes Worker Nodes
-kubelet และ kube-proxy เป็นส่วนประกอบเพียง 2 ส่วนของ Kubenetes ที่ติดตั้งที่ Worker Node ที่ใช้ในการจัดการสิ่งต่าง ๆ ที่เกิดขี้นใน Cluster และยังต้องสื่อสารกับ master node ตลอดเวลา นอกเหนือจาก นั้นก็มี Container Runtime อีกด้วย 
-## เตรียม Kubernetes Worker Node Binaries
+kubelet และ kube-proxy เป็นส่วนประกอบ 2 ส่วนของ Kubernetes ที่ติดตั้งที่ Worker Node ที่ใช้ในการจัดการสิ่งต่าง ๆ ที่เกิดขี้นใน Cluster และยังต้องสื่อสารกับ master node ตลอดเวลา นอกเหนือจาก นั้นก็มี Container Runtime อีกด้วย 
+## เตรียม Kubernetes Worker Node Binaries [all worker node]
 ```
 mkdir -p \
  /etc/cni/net.d \
@@ -19,7 +19,7 @@ cd kubernetes/node/bin/
 mv kubectl kube-proxy kubelet /usr/local/bin/
 cd
 ```
-## เตรียมข้อมูลที่ใช้ในการทำงานของ kubelet
+## เตรียมข้อมูลที่ใช้ในการทำงานของ kubelet [all worker node]
 ```
 cp ${HOSTNAME}.key ${HOSTNAME}.crt /var/lib/kubelet/
 cp ${HOSTNAME}.kubeconfig /var/lib/kubelet/kubeconfig
@@ -46,7 +46,7 @@ tlsCertFile: "/var/lib/kubelet/${HOSTNAME}.crt"
 tlsPrivateKeyFile: "/var/lib/kubelet/${HOSTNAME}.key"
 EOF
 ```
-## สร้าง kubelet.service สำหรับ systemd
+## สร้าง kubelet.service สำหรับ systemd [all worker node]
 ```
 cat <<EOF | sudo tee /etc/systemd/system/kubelet.service
 [Unit]
@@ -72,7 +72,7 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-## เตรียมข้อมูลที่ใช้ในการทำงานของ kube-proxy
+## เตรียมข้อมูลที่ใช้ในการทำงานของ kube-proxy [all worker node]
 ```
 cp kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 cat <<EOF | sudo tee /var/lib/kube-proxy/kube-proxy-config.yaml
@@ -84,7 +84,7 @@ mode: "iptables"
 clusterCIDR: "10.0.0.0/16"
 EOF
 ```
-## สร้าง kube-proxy.service สำหรับ systemd
+## สร้าง kube-proxy.service สำหรับ systemd [all worker node]
 ```
 cat <<EOF | sudo tee /etc/systemd/system/kube-proxy.service
 [Unit]
@@ -101,12 +101,12 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-## เริ่มการทำงานของ kubelet และ kube-proxy
+## เริ่มการทำงานของ kubelet และ kube-proxy [all worker node]
 ```
 systemctl daemon-reload
 systemctl enable kubelet kube-proxy --now
 ```
-## ทดสอบและผลการทดสอบ
+## ทดสอบและผลการทดสอบ [master0]
 ```
 kubectl get nodes --kubeconfig admin.kubeconfig
 ```
