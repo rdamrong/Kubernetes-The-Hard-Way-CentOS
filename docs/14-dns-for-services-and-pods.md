@@ -22,14 +22,14 @@ weave-net-lxwpn            2/2     Running   0          3m39s
 > จะพบว่ามี pod ที่ชื่อว่า coredns-xxxxxxxxxx-xxxxx สถานะ Running อยู่
 ### ทดสอบการทำงานของ CoreDNS [master0]
 ```
-]#  kubectl run dnstest --image centos -- sleep 36000
+]#  **kubectl run dnstest --image centos -- sleep 36000**
 pod/dnstest created
-]# kubectl get pods
+]# **kubectl get pods**
 NAME      READY   STATUS    RESTARTS   AGE
 dnstest   1/1     Running   0          50s
-]# kubectl exec -it dnstest -- /bin/bash
-[root@dnstest /]# yum install -y bind-utils
-[root@dnstest /]# dig kubernetes.default.svc.cluster.local
+]# **kubectl exec -it dnstest -- /bin/bash**
+[root@dnstest /]# **yum install -y bind-utils**
+[root@dnstest /]# **dig kubernetes.default.svc.cluster.local**
 
 ; <<>> DiG 9.11.13-RedHat-9.11.13-6.el8_2.1 <<>> kubernetes.default.svc.cluster.local
 ;; global options: +cmd
