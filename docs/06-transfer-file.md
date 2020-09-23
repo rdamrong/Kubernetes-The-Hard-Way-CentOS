@@ -17,3 +17,6 @@ done
 scp ca.crt node0.crt node0.key node0.kubeconfig root@192.168.254.64:.
 scp ca.crt node1.crt node1.key node1.kubeconfig root@192.168.254.65:.
 ```
+**Next>** [ติดตั้ง etcd](07-install_etcd_cluster.md)
+
+**<Prev** [เคล็ดไม่ลับ เล็ก ๆ น้อย ๆ](05-tip-n-trick.md)
