@@ -96,7 +96,7 @@ mv admin.pem admin.crt
 ### สร้าง Kubelet Client Key Pair
 ใน Kubernetes มีการกำหนดเรื่อง [Node Authorization](https://kubernetes.io/docs/reference/access-authn-authz/node/) เพื่อให้จัดการเรื่องกำหนดสิทธิ์ในการเรียก API ในไปยัง Kubelet เรียกว่า Node Authorizer มีการกำหนด Group ที่ต้องเป็น system:nodes และ Username จะเป็น system:node:<nodeName> ซึ่งจะกำหนดที่ CommonName และ Organization ใน Certificate Attributes
 ```
- {
+{
 declare -A NODE_IP
 NODE_IP[node0]="192.168.254.64"
 NODE_IP[node1]="192.168.254.65"
@@ -206,8 +206,6 @@ mv kube-proxy-key.pem kube-proxy.key
 mv kube-proxy.pem kube-proxy.crt
 }
 
-
-{
 
 ```
 ### สร้าง Scheduler Client Key Pair
