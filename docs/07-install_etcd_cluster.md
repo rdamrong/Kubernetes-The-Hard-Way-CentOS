@@ -91,3 +91,6 @@ ETCDCTL_API=3 etcdctl member list \
 8283bd82ad10dcb8, started, master1, https://192.168.254.62:2380, https://192.168.254.62:2379, false
 fcae0ac3856fb516, started, master0, https://192.168.254.61:2380, https://192.168.254.61:2379, false
 ```
+**Next>** [ติดตั้ง Kubernetes Control Plane](08-install_kubernetes_control_plane.md)
+
+**<Prev** [โอนถ่ายไฟล์ที่สร้างไปยัง Virtual Machine](06-transfer-file.md)
