@@ -36,7 +36,7 @@ data:
       - 192.168.254.200-192.168.254.250
 
 kubectl create -f metallb-configmap.yml
-``
+```
 ## ทดสอบการทำงานของ Metallb โดยการสร้าง Service แบบ Loadbalancer
 ```
 [root@kube-master ~]# cat nginx-deployment.yml
