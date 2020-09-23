@@ -54,7 +54,7 @@ The key's randomart image is:
 |6|node1.example.com|192.168.254.65|Worker|
 > - ทุกเครื่องมี 2 vCPU, Memory 2 GB, HDD 10 GB
 > - ทุกเครื่องมีระบบปฏิบัติการ CentOS 8.2
-> - ติดตั้ง Docker เรียบร้อยแล้วทุกเครื่อง ยกเว้นเครื่อง Loadbalancer
+> - ติดตั้ง Docker ที่ Worker Node ทั้งสองเครื่อง
 > - ทุกเครื่องสามารถใช้ SSH Key-Based Authentication ได้
 ### ตัวอย่างการโอนถ่าย Public Key ไปยังเครื่อง Virtual Machine เพื่อให้สามารถทำ SSH Key-Based Authentication ได้
 ```
@@ -69,7 +69,7 @@ Number of key(s) added:        1
 Now try logging into the machine, with:   "ssh 'root@192.168.254.60'"
 and check to make sure that only the key(s) you wanted were added.
 ```
-### ตรวจสอบ Docker ที่ติดตั้งในแต่ละเครื่อง
+### ตรวจสอบ Docker ที่ติดตั้งใน Worker Node
 ```
 # docker version
 Client: Docker Engine - Community
