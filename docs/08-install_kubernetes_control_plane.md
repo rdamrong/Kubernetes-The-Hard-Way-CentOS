@@ -1,6 +1,6 @@
 # ติดตั้ง Kubernetes Control Plane
 
-kube-apiserver, kube-controller-manager, kube-scheduler เป็นองค์ประกอบสำคัญของการทำงานของ master node และติดตั้ง kubectl ที่เป็น Kubenetes Client ที่จะเชื่อมต่อกับ Kubenetes Cluster ในเบื้องต้นเพื่อสร้างส่วนที่จำเป็นภายใน Kubenetes Cluster 
+kube-apiserver, kube-controller-manager, kube-scheduler เป็นองค์ประกอบสำคัญของการทำงานของ master node และติดตั้ง kubectl ที่เป็น Kubenetes Client ที่จะเชื่อมต่อกับ Kubenetes Cluster ในเบื้องต้นเพื่อสร้างส่วนที่จำเป็นภายใน Kubernetes Cluster 
 ## เตรียม Kubenetes Controller binaries [all master node]
 ```
 {
