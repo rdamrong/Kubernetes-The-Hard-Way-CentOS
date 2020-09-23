@@ -27,6 +27,7 @@ cp kube-scheduler.kubeconfig /var/lib/kubernetes/
 INTERNAL_IP=$(ip addr show eth0| grep "inet " | awk '{print $2}' | cut -d / -f 1)
 echo $INTERNAL_IP
 ```
+> eth0 เป็นชื่อ network interface card ซึ่งอาจจะต่างกันไป
 ## สร้าง `kube-apiserver.service` สำหรับ systemd [all master node]
 ```
 cat <<EOF | sudo tee /etc/systemd/system/kube-apiserver.service
