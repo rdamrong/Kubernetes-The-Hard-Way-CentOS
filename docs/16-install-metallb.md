@@ -16,7 +16,7 @@ clusterCIDR: "10.0.0.0/16"
 systemctl restart kube-proxy
 ```
 ## ติดตั้ง Metallb และกำหนดค่า ConfigMap สำหรับ Metallb
-``
+```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
 # On first install only
