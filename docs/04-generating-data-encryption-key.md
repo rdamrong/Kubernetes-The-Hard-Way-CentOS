@@ -25,6 +25,6 @@ resources:
 EOF
 }
 ```
-**Next** [เคล็ดไม่ลับ เล็ก ๆ น้อย ๆ](05-tip-n-trick.md)
+**Next>** [เคล็ดไม่ลับ เล็ก ๆ น้อย ๆ](05-tip-n-trick.md)
 
-**Prev** [สร้าง Kubernetes Configuration Files สำหรับ Authentication](03-generating-kubenetes-configuration-file.md)
+**<Prev** [สร้าง Kubernetes Configuration Files สำหรับ Authentication](03-generating-kubenetes-configuration-file.md)
