@@ -117,3 +117,5 @@ node0   NotReady   <none>   10m    v1.19.0
 node1   NotReady   <none>   6m7s   v1.19.0
 ```
 > ผลที่ได้ สถานะของ node จะยังเป็น Not Ready เนื่องจาก ในส่วนของ Network ยังไม่ได้ถูกกำหนดค่า
+**Next>** [Kubernetes Object Authorization](11-kubernetes-object-authorization.md)
+**<Prev** [ติดตั้ง Loadbalancer สำหรับ master node](09-loadbalancer.md)
