@@ -55,6 +55,6 @@ kubernetes.default.svc.cluster.local. 5 IN A    10.96.0.1
 ;; MSG SIZE  rcvd: 129
 
 ```
-**Next>** [ทดสอบ](15-test.md)
+**Next>** [ทดสอบการทำงาน](15-test.md)
 
 **<Prev** [ติดตั้ง Network สำหรับ Pod](13-pod-network.md)
