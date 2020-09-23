@@ -21,4 +21,4 @@ systemctl enable --now nginx
 ```
 **Next>** [ติดตั้ง Kubernetes Worker Nodes](10-install-worker-node.md)
 
-**<Prev** [ติดตั้ง etcd](07-install_etcd_cluster.md)
+**<Prev** [ติดตั้ง Kubernetes Control Plane](08-install_kubernetes_control_plane.md)
