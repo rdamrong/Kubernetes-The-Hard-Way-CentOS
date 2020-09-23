@@ -1,4 +1,4 @@
-# ติดตั้ง Metallb เมื่อต้องการใช้ Service แบบ LoadฺBalancer
+# ติดตั้ง Metallb เมื่อต้องการใช้ Service แบบ LoadBalancer
 หากต้องการใช้ Service แบบ Loadlbalancer จำเป็นต้องติดตั้ง software เพิ่มเติม ผู้เขียนเลือก Metallb เป็นตัวอย่างในเอกสารชุดนี้
 ## แก้ไข Kube-Proxy Configuration และ Restart kube-proxy service [all worker node]
 ```
