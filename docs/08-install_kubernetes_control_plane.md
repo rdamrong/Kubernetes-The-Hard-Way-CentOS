@@ -162,3 +162,6 @@ kubectl get --raw='/readyz?verbose' --kubeconfig=admin.kubeconfig
 [+]shutdown ok
 healthz check passed
 ```
+**Next>** [ติดตั้ง Loadbalancer สำหรับ master node](09-loadbalancer.md)
+
+**<Prev** [ติดตั้ง etcd](07-install_etcd_cluster.md)
