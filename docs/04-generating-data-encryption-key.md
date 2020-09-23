@@ -1,5 +1,5 @@
 # สร้าง Data Encryption Config และ Key
-ข้อมูลที่ Kubernetes API Server เขียนข้อมูลเก็บไว้ใน etcd server เราสามารถกำหนดให้เข้ารหัสลับข้อมูลที่ถูกจัดเก็บได้ เพื่อป้องกันข้อผิดพลาดที่อาจจะมีการเข้าถึงข้อมูลที่ etcd server โดยตรง ดังนั้งจึงต้องสร้าง Key เพื่อใช้ในการเข้ารหัสลับ, เก็บ key ไว้ที่ object ที่ชื่อว่า EncryptionConfig และ กำหนดให้ kube-apiserver เรียกใช้ EncryptionConfig ด้วย option  `--encryption-provider-config`
+ข้อมูลที่ Kubernetes API Server เขียนข้อมูลเก็บไว้ใน etcd server ในการเรียกใช้งาน Kubernetes API Server สามารถกำหนดให้เข้ารหัสลับข้อมูลที่ถูกจัดเก็บได้ เพื่อป้องกันข้อผิดพลาดที่อาจจะมีการเข้าถึงข้อมูลที่ etcd server โดยตรง ดังนั้งจึงต้องสร้าง Key เพื่อใช้ในการเข้ารหัสลับ, เก็บ key ไว้ที่ object ที่ชื่อว่า EncryptionConfig และ กำหนดให้ kube-apiserver เรียกใช้ EncryptionConfig ด้วย option  `--encryption-provider-config`
 ## สร้าง Key ที่ใช้ในการเข้ารหัส
 ในการสร้าง Key จะใช้วิธีการอ่านข้อมูลจาก /dev/urandom และ encode ด้วย base64
 ```
