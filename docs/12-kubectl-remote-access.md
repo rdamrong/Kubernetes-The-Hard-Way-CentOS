@@ -20,3 +20,6 @@
   kubectl config use-context kubernetes-the-hard-way
 }
 ```
+**Next>** [ติดตั้ง Network สำหรับ Pod](13-pod-network.md)
+
+**<Prev** [Kubernetes Object Authorization](11-kubernetes-object-authorization.md)
