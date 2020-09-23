@@ -2,7 +2,7 @@
 ในการสื่อสารกับ Kubernetes ทั้งภายในและภายนอก Cluster เรื่องความปลอดภัยในการสื่อสารเป็นเรื่องที่ได้รับการออกแบบให้มีความปลอดภัย และ [TLS (Transport Layer Security)](https://en.wikipedia.org/wiki/Transport_Layer_Security) ก็เป็นวิธีการที่ถูกเลือกใช้ในการจัดการเรื่องนี้ ส่วนเรื่องของการ Authentication ของ client ในการขอเชื่อมต่อก็จะใช้วิธีการที่เรียกว่า [Mutual Authentication แบบ Certificated based](https://en.wikipedia.org/wiki/Mutual_authentication) ดังนั้นจึงจำเป็นต้องสร้าง key pair จำนวนมากในการติดตั้ง Kubernetes
 ## ต้องสร้าง Key Pair ที่ไหนบ้าง 
 ในการใช้งาน TLS ส่วนของการ Authenitation ใน TLS ใช้ [Public-Key Cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) ในส่วนนี้จึงสร้าง key pair โดยหลักคิดก็คือว่า component ตัวไหนทำหน้าที่เป็น Server ในการให้บริการก็ต้องสร้าง key pair ให้ และ component ไหนทำหน้าที่เป็น client ในการขอใช้บริการก็ต้องสร้าง key pair ให้
-![Kubernetes and TLS Information](https://github.com/rdamrong/Kubernetes-The-Hard-Way-CentOS/blob/master/images/kube_component.png)
+![Kubernetes and TLS Information](https://github.com/rdamrong/Kubernetes-The-Hard-Way-CentOS/blob/master/images/kube-component.png)
 - วงกลมสีฟ้าที่มีอักษร S แสดงในองค์ประกอบนั้นทำหน้าที่เป็น Server ที่ทำหน้าที่ให้บริการ service ในหน้าที่ของตัวเอง
 - วงกลมสีฟ้าที่มีอักษร C แสดงในองค์ประกอบนั้นทำหน้าที่เป็น Client ต้องขอใช้บริการใน service ที่ต้องการ
 > ในเอกสาร version แรกจะเป็นไปตามแนวทางที่ผู้เขียนอ้างอิงถึงจะมีจุดสังเกตุอยู่ 2 จุด
