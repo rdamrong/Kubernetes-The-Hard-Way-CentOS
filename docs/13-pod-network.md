@@ -30,3 +30,6 @@ NAME    STATUS   ROLES    AGE   VERSION
 node0   Ready    <none>   14m   v1.19.0
 node1   Ready    <none>   11m   v1.19.0
 ```
+**Next>** [ติดตั้ง DNS สำหรับ Services และ Pods](14-dns-for-services-and-pods.md)
+
+**<Prev** [สร้าง kubeconfig สำหรับ remote access](12-kubectl-remote-access.md)
