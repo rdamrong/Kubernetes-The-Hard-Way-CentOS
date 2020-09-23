@@ -136,6 +136,6 @@ kubectl config set-cluster kubernetes-the-hard-way \
 
   kubectl config use-context default --kubeconfig=admin.kubeconfig
 ```
-**Next** [สร้าง Data Encryption Config และ Key](04-generating-data-encryption-key.md)
+**Next>** [สร้าง Data Encryption Config และ Key](04-generating-data-encryption-key.md)
 
-**Prev** [แนวคิดในการสร้าง TLS Certicate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](02-generating-tls-certificate.md)
+**<Prev** [แนวคิดในการสร้าง TLS Certicate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](02-generating-tls-certificate.md)
