@@ -1,4 +1,4 @@
-# ทดสอบการทำงาน
+# ທົດສອບການເຮັດວຽກ
 ## ทดสอบ Pod Network
 ```
 [root@master0 ~]# kubectl get pods -o wide
