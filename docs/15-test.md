@@ -1,5 +1,5 @@
 # ທົດສອບການເຮັດວຽກ
-## ทดสอบ Pod Network
+## ທົດສອບ Pod Network
 ```
 [root@master0 ~]# kubectl get pods -o wide
 NAME      READY   STATUS    RESTARTS   AGE   IP          NODE    NOMINATED NODE   READINESS GATES
@@ -24,7 +24,7 @@ rtt min/avg/max/mdev = 0.666/0.952/1.493/0.383 ms
 exit
 Session ended, resume using 'kubectl attach pingtest -c pingtest -i -t' command when the pod is running
 ```
-## ทดสอบสร้าง Deployment
+## ທົດສອບສ້າງ Deployment
 ```
 [root@master0 ~]# echo "
 apiVersion: apps/v1
@@ -58,7 +58,7 @@ dp1-6fc549dc58-trcf8   1/1     Running   0          9s
 dp1-6fc549dc58-vgb5d   1/1     Running   0          9s
 pingtest               1/1     Running   1          8m29s
 ```
-## ทดสอบสร้าง Service แบบ NodePort
+## ທົດສອບສ້າງ Service แบบ NodePort
 ```
 [root@master0 ~]# echo "
 apiVersion: v1
