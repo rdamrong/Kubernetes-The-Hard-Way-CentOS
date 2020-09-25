@@ -1,12 +1,13 @@
-# รายละเอียดในการติดตั้ง
-ในขั้นตอนนี้เป็นขั้นตอนการเตรียม Virtual Machine สำหรับติดตั้ง Kubernetes และ Admin Workstation สำหรับเป็นเครื่องมือในการเตรียมข้อมูล และใช้ติดตั้ง Kubernetes ให้พร้อมในการติดตั้ง Kubernetes แบบ The Hard Way 
+# ລາຍລະອຽດໃນການຕິດຕັ້ງ
+ໃນຂັ້ນຕອນນີ້ເປັນຂັ້ນຕອນການຕຽມ Virtual Machine ສຳລັບຕິດຕັ້ງ Kubernetes ແລະ Admin Workstation ສຳລັບເປັນເຄື່ອງມືໃນການກຽມຂໍ້ມູນ ແລະໃຊ້ຕິດຕັ້ງ Kubernetes ໃຫ້ພ້ອມໃນການຕິດຕັ້ງ Kubernetes ແບບ The Hard Way 
 ## Admin Workstation
-ในกรณีของผู้เขียนใช้ macOS version 10.15.6 เป็นเครื่องหลักในการติดตั้ง ดังนั้นรายละเอียดในส่วนนี้ ก็จะอ้างอิงกับ macOS แต่เครื่องมือที่จำเป็นก็สามารถติดตั้งในระบบปฏิบัติการ Linux ได้ เครื่องมือจะถูกติดตั้งผ่าน [Homebrew](https://brew.sh/) ที่เป็นเครื่องมือ Package Manager ที่ช่วยอำนวยความสะดวกในการติดตั้ง software เพิ่มเติมใน macOS
-### ติดตั้ง cfssl และ kubectl 
+ໃນກໍລະນີຂອງຜູ້ຂຽນໃຊ້ macOS version 10.15.6 ເປັນເຄື່ອງຫລັກໃນການຕິດຕັ້ງ ດັ່ງນັ້ນລາຍລະອຽດໃນສ່ວນນີ້ ກໍຈະອ້າງອິງກັບ macOS ແຕ່ເຄື່ອງມືທີ່ຈຳເປັນກໍສາມາດຕິດຕັ້ງໃນລະບົບປະຕິບັດການ Linux ໄດ້ ເຄື່ອງມືຈະຖືກຕິດຕັ້ງຜ່ານ [Homebrew](https://brew.sh/) ທີ່ເປັນເຄື່ອງມື Package Manager ທີ່ຊ່ວຍອຳນວຍຄວາມສະດວກໃນການຕິດຕັ້ງ software ເພິ່ມເຕິມໃນ macOS
+
+### ຕິດຕັ້ງ cfssl ແລະ kubectl 
 ```
 brew install cfssl kubectl
 ```
-> ตรวจสอบการติดตั้ง
+> ກວດສອບການຕິດຕັ້ງ
 ```
 $ cfssl version
 Version: dev
@@ -17,8 +18,8 @@ Runtime: go1.14
 $ kubectl version --client 
 Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2", GitCommit:"f5743093fd1c663cb0cbc89748f730662345d44d", GitTreeState:"clean", BuildDate:"2020-09-16T21:51:49Z", GoVersion:"go1.15.2", Compiler:"gc", Platform:"darwin/amd64"}
 ```
-นอกจาก software ที่ต้องติดตั้งเพิ่มเติม ก็ยังใช้ software ที่ถูกติดตั้งมาพร้อมกับ macOS อยู่แล้วได้แก่ terminal, ssh client, ssh-keygen
-### สร้าง Key Pair สำหรับ Authencation เครื่อง Virtual Machine
+ນອກຈາກ software ທີ່ຕ້ອງຕິດຕັ້ງເພິ່ມເຕິມ ກໍຍັງໃຊ້ software ທີ່ຖືກຕິດຕັ້ງມາພ້ອມກັບ macOS ຢູ່ແລ້ວໄດ້ແກ່ terminal, ssh client, ssh-keygen
+### ສ້າງ Key Pair ສຳລັບ Authencation ເຄື່ອງ Virtual Machine
 ```
 $ ssh-keygen -t ed25519
 Generating public/private ed25519 key pair.
@@ -43,7 +44,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 ## Virtual Machine
-ใน lab ของผู้เขียนใช้ [oVirt](https://www.ovirt.org/) เป็นเครื่องมือในการจัดการ ซึ่งแต่ละคนอาจจะใช้เครื่องมือที่ต่างกัน เช่น VirtualBox, VMWare Workstation, VMWare vSphere, VMWare vCenter, OpenStack, Azure Stack หรือจะเป็น Instance ที่ Public Cloud ก็ได้ ในการติดตั้งครั้งนี้ต้องการ Virtual Machine ทั้งหมด 6 เครื่องดังนี้
+ໃນ lab ຂອງຜູ້ຂຽນໃຊ້ [oVirt](https://www.ovirt.org/) ເປັນເຄື່ອງມືໃນການຈັດການ ຊຶ່ງແຕ່ລະຄົນອາດຈະໃຊ້ເຄື່ອງມືທີ່ຕ່າງກັນ ເຊັ່ນ VirtualBox, VMWare Workstation, VMWare vSphere, VMWare vCenter, OpenStack, Azure Stack ຫລືຈະເປັນ Instance ທີ່ Public Cloud ກໍໄດ້ ໃນການຕິດຕັ້ງເທື່ອນີ້ຕ້ອງການ Virtual Machine ທັງໝົດ 6 ເຄື່ອງດັ່ງນີ້
 |Item|Hostname|IP|Function|
 |----|--------|--|--------|
 |1|api.example.com|192.168.254.60|Loadbalancer|
@@ -52,11 +53,11 @@ The key's randomart image is:
 |4|master2.example.com|192.168.254.63|Master|
 |5|node0.example.com|192.168.254.64|Worker|
 |6|node1.example.com|192.168.254.65|Worker|
-> - ทุกเครื่องมี 2 vCPU, Memory 2 GB, HDD 10 GB
-> - ทุกเครื่องมีระบบปฏิบัติการ CentOS 8.2
-> - ติดตั้ง Docker ที่ Worker Node ทั้งสองเครื่อง
-> - ทุกเครื่องสามารถใช้ SSH Key-Based Authentication ได้
-### ตัวอย่างการโอนถ่าย Public Key ไปยังเครื่อง Virtual Machine เพื่อให้สามารถทำ SSH Key-Based Authentication ได้
+> - ທຸກເຄື່ອງມີ 2 vCPU, Memory 2 GB, HDD 10 GB
+> - ທຸກເຄື່ອງມີລະບົບປະຕິບັດການ CentOS 8.2
+> - ຕິດຕັ້ງ Docker ທີ່ Worker Node ທັງສອງເຄື່ອງ
+> - ທຸກເຄື່ອງສາມາດໃຊ້ SSH Key-Based Authentication ໄດ້
+### ຕົວຢ່າງການໂອນຖ່າຍ Public Key ໄປຍັງເຄື່ອງ Virtual Machine ເພື່ອໃຫ້ສາມາດເຮັດ SSH Key-Based Authentication ໄດ້
 ```
 $ ssh-copy-id root@192.168.254.60
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/drs/.ssh/id_ed25519.pub"
@@ -69,7 +70,7 @@ Number of key(s) added:        1
 Now try logging into the machine, with:   "ssh 'root@192.168.254.60'"
 and check to make sure that only the key(s) you wanted were added.
 ```
-### ตรวจสอบ Docker ที่ติดตั้งใน Worker Node
+### ກວດສອບ Docker ທີ່ຕິດຕັ້ງໃນ Worker Node
 ```
 # docker version
 Client: Docker Engine - Community
@@ -100,4 +101,4 @@ Server: Docker Engine - Community
   Version:          0.18.0
   GitCommit:        fec3683
 ```
-**Next>** [แนวคิดในการสร้าง TLS Certicate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](02-generating-tls-certificate.md)
+**Next>** [ແນວຄິດໃນການສ້າງ TLS Certicate ໃນ Kubernetes ແລະ ສ້າງ Certificate Authority ກັບ TLS Certificate](02-generating-tls-certificate.md)
