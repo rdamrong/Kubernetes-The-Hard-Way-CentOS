@@ -13,7 +13,7 @@
 - ຊຸດ IP ພາຍໃນ Cluster 10.96.0.0/24
 - Cluster DNS 10.96.0.10
 # ສານບັນ Kubernetes The Hard Way - CentOS
-[01. ລາຍລະອຽດໃນການຕິດຕັ້ງ] (docs/01-prerequisites.md)
+[01. ລາຍລະອຽດໃນການຕິດຕັ້ງ](docs/01-prerequisites.md)
 
 [02. ແນວຄິດໃນການສ້າງ TLS Certicate ໃນ Kubernetes ແລະ ສ້າງ Certificate Authority ກັບ TLS Certificate](docs/02-generating-tls-certificate.md)
 
