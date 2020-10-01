@@ -2,6 +2,8 @@
 kubelet และ kube-proxy เป็นส่วนประกอบ 2 ส่วนของ Kubernetes ที่ติดตั้งที่ Worker Node ที่ใช้ในการจัดการสิ่งต่าง ๆ ที่เกิดขี้นใน Cluster และยังต้องสื่อสารกับ master node ตลอดเวลา นอกเหนือจาก นั้นก็มี Container Runtime อีกด้วย 
 ## เตรียม Kubernetes Worker Node Binaries [all worker node]
 ```
+KUBEVER=v1.19.2
+
 mkdir -p \
  /etc/cni/net.d \
  /opt/cni/bin \
@@ -11,8 +13,7 @@ mkdir -p \
  /var/run/kubernetes
 
 dnf install -y wget
-
-wget --show-progress https://dl.k8s.io/v1.19.0/kubernetes-node-linux-amd64.tar.gz
+wget --show-progress https://dl.k8s.io/${KUBEVER}/kubernetes-node-linux-amd64.tar.gz
 
 tar xvfz kubernetes-node-linux-amd64.tar.gz
 cd kubernetes/node/bin/
