@@ -4,7 +4,9 @@ kube-apiserver, kube-controller-manager, kube-scheduler เป็นองค์
 ## เตรียม Kubenetes Controller binaries [all master node]
 ```
 {
-DL=https://dl.k8s.io/v1.19.0/kubernetes-server-linux-amd64.tar.gz
+KUBEVER=v1.19.2
+DL=https://dl.k8s.io/${KUBEVER}/kubernetes-server-linux-amd64.tar.gz
+
 dnf install -y wget
 wget -q --show-progress ${DL}
 
