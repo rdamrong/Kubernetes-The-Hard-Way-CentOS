@@ -1,11 +1,11 @@
-# สร้าง Kubernetes Configuration Files สำหรับ Authentication
-Kubernetes Configuration Files หรืออาจจะเรียกสั้น ๆ ว่า kubeconfig ใช้เพื่อให้ Client ระบุ Kubernetes API Server ว่า cluster ไหน IP อะไร ให้บริการ port อะไร ร่วมถึง CA Certicate ที่จะในตอนเชื่อมต่อแบบ TLS, ระบุ credential ในการเชื่อมต่อไปยัง Kubernetes API Server และสุดท้ายก็จะมี context ที่จะจับคู่ระหว่าง credential กับ cluster ว่าจะใช้ credentail ตัวไหน เชื่อมต่อไปยัง cluster ไหน 
-## Kubernetes Configuration Files ต้องสร้างกี่ไฟล์
-จากหน้าที่ของ Kubernetes Configuration Files ในช่วงแรก ดังนั้นส่วนประกอบใดที่ต้องเชื่อมต่อกับ Kubernetes API Server ก็ต้องสร้าง Kubernetes Configuration Files เตรียมไว้
+# ສ້າງ Kubernetes Configuration Files ສໍາລັບ Authentication
+Kubernetes Configuration Files ຫຼືອາດຈະເອີ້ນສັ້ນໆວ່າ kubeconfig ໃຊ້ເພື່ອໃຫ້ Client ລະບຸ Kubernetes API Server ວ່າ cluster ໃດ IP ຫຍັງ ໃຫ້ບໍລິການ port ໃດ ລວມເຖິງ CA Certicate ທີ່ຈະໃຊ້ໃນຕອນເຊື່ອມຕໍ່ແບບ TLS, ລະບຸ credential ໃນການເຊື່ອມຕໍ່ກັບ Kubernetes API Server ແລະສຸດທ້າຍ context ທີ່ຈະຈັບຄູ່ລະຫວ່າງ credential ກັບ cluster ວ່າຈະໃຊ້ credential ຕົວໃດ ເຊື່ອມຕົວໄປຍັງ cluster ໃດ.
+## Kubernetes Configuration Files ຕ້ອງສ້າງຈັກໄຟລ໌
+ຈາກໜ້າທີ່ຂອງ Kubernetes Configuration Files ໃນຊ່ວງທໍາອິດ ດັ່ງນັ້ນສ່ວນປະກອບໃດທີ່ຕ້ອງເຊື່ອມຕໍ່ກັບ Kubernetes API Server ກໍຕ້ອງສ້າງ Kubernetes Configuration Files ກຽມໄວ້
 ![Kubernetes and TLS Information](https://github.com/rdamrong/Kubernetes-The-Hard-Way-CentOS/blob/master/images/kube-component.png)
 
 
-## สร้าง kubelet Kubernetes Configuration File
+## ສ້າງ kubelet Kubernetes Configuration File
 ```
 LOADBALANCER_ADDRESS=192.168.254.60
 {
@@ -50,7 +50,7 @@ LOADBALANCER_ADDRESS=192.168.254.60
   kubectl config use-context default --kubeconfig=node1.kubeconfig
 }
 ```
-## สร้าง kube-proxy Kubernetes Configuration File
+## ສ້າງ kube-proxy Kubernetes Configuration File
 ```
 LOADBALANCER_ADDRESS=192.168.254.60
 kubectl config set-cluster kubernetes-the-hard-way \
@@ -72,7 +72,7 @@ kubectl config set-cluster kubernetes-the-hard-way \
 
   kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
 ```
-## สร้าง kube-controller-manager Kubernetes Configuration File
+## ສ້າງ kube-controller-manager Kubernetes Configuration File
 ```
 kubectl config set-cluster kubernetes-the-hard-way \
     --certificate-authority=ca.crt \
@@ -115,7 +115,7 @@ kubectl config set-cluster kubernetes-the-hard-way \
 
   kubectl config use-context default --kubeconfig=kube-scheduler.kubeconfig
 ```
-## สร้าง admin Kubernetes Configuration File
+## ສ້າງ admin Kubernetes Configuration File
 ```
 kubectl config set-cluster kubernetes-the-hard-way \
     --certificate-authority=ca.crt \
@@ -136,6 +136,6 @@ kubectl config set-cluster kubernetes-the-hard-way \
 
   kubectl config use-context default --kubeconfig=admin.kubeconfig
 ```
-**Next>** [สร้าง Data Encryption Config และ Key](04-generating-data-encryption-key.md)
+**Next>** [ສ້າງ Data Encryption Config ແລະ Key](04-generating-data-encryption-key.md)
 
-**<Prev** [แนวคิดในการสร้าง TLS Certicate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](02-generating-tls-certificate.md)
+**<Prev** [ແນວຄີດໃນການສ້າງ TLS Certicate ໃນ Kubernetes ແລະ ສ້າງ Certificate Authority ກັບ TLS Certificate](02-generating-tls-certificate.md)
