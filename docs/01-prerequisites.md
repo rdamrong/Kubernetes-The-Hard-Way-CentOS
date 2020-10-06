@@ -18,7 +18,7 @@ $ kubectl version --client
 Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2", GitCommit:"f5743093fd1c663cb0cbc89748f730662345d44d", GitTreeState:"clean", BuildDate:"2020-09-16T21:51:49Z", GoVersion:"go1.15.2", Compiler:"gc", Platform:"darwin/amd64"}
 ```
 นอกจาก software ที่ต้องติดตั้งเพิ่มเติม ก็ยังใช้ software ที่ถูกติดตั้งมาพร้อมกับ macOS อยู่แล้วได้แก่ terminal, ssh client, ssh-keygen
-### สร้าง Key Pair สำหรับ Authencation เครื่อง Virtual Machine
+### สร้าง Key Pair สำหรับ Authentication เครื่อง Virtual Machine
 ```
 $ ssh-keygen -t ed25519
 Generating public/private ed25519 key pair.
