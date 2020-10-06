@@ -15,7 +15,7 @@
 # สารบัญ Kubernetes The Hard Way - CentOS
 [01. รายละเอียดในการติดตั้ง](docs/01-prerequisites.md)
 
-[02. แนวคิดในการสร้าง TLS Certicate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](docs/02-generating-tls-certificate.md)
+[02. แนวคิดในการสร้าง TLS Certificate ใน Kubernetes และ สร้าง Certificate Authority กับ TLS Certificate](docs/02-generating-tls-certificate.md)
 
 [03. สร้าง Kubernetes Configuration Files สำหรับ Authentication](docs/03-generating-kubenetes-configuration-file.md)
 
