@@ -1,5 +1,5 @@
-# สร้าง Kubernetes Configuration File สำหรับ remote access
-จากที่ผ่านมาใช้จะส่งค่า kubeconfig file ผ่าน option --kubeconfig กับ kubectl ในเอกสารฉบับนี้จะสร้าง kubeconfig file ให้อยู่ในตำแหน่งที่เป็น default ที่ไม่จำเป็นต้องระบุ -kubeconfig ซึ่งไฟล์นั้นจะถูกเก็บไว้ที่ $HOME/.kube/config ซึ่งสามารถสร้างที่ไหนก็ได้ที่สามารถติดตั้ง kubectl ได้ ไม่จำเป็นต้องสร้างหรือใช้งานจากภายใน Kubernetes Cluster 
+# ສ້າງ Kubernetes Configuration File ສຳລັບ remote access
+ຈາກທີ່ຜ່ານມາໃຊ້ຈະສົ່ງຄ່າ kubeconfig file ຜ່ານ option --kubeconfig ກັບ kubectl ໃນເອກະສານສະບັບນີ້ຈະສ້າງ kubeconfig file ໃຫ້ຢູ່ໃນຕຳແໜ່ງທີ່ເປັນ default ທີ່ບໍ່ຈຳເປັນຕ້ອງລະບຸ -kubeconfig ເຊິ່ງໄຟຣ໌ນັ້ນຈະຖືກເກັບໄວ້ທີ່ $HOME/.kube/config ເຊິ່ງສາມາດສ້າງຢູ່ໃສກໍ່ໄດ້ທີ່ສາມາດຕິດຕັ້ງ kubectl ໄດ້ ບໍ່ຈຳເປັນຕ້ອງສ້າງຫຼືໃຊ້ວຽກຈາກພາຍໃນ Kubernetes Cluster 
 ```
 {
   KUBERNETES_LB_ADDRESS=192.168.254.60
@@ -20,6 +20,6 @@
   kubectl config use-context kubernetes-the-hard-way
 }
 ```
-**Next>** [ติดตั้ง Network สำหรับ Pod](13-pod-network.md)
+**Next>** [ຕິດຕັ້ງ Network ສຳລັບ Pod](13-pod-network.md)
 
 **<Prev** [Kubernetes Object Authorization](11-kubernetes-object-authorization.md)
