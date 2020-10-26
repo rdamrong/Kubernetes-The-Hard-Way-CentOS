@@ -1,9 +1,9 @@
-# ติดตั้ง etcd
+# ຕິດຕັ້ງ etcd
 
-etcd ทำหน้าที่เก็บข้อมูลต่าง ๆ ของ cluster ไม่ว่าจะเป็นข้อมูลของ cluster เอง และข้อมูลสถานะขณะที่ Kubernetes กำลังทำงาน ในเอกสารชุดนี้ etcd จะถูกติดตั้งที่ master node และกำหนดค่าให้ etcd ทำงานในรูปแบบ High Availability และคำนึงถึงความปลอดภัยในการเชื่อมต่อ หากต้องการข้อมูลเพิ่มเติมได้ที่ [etcd](https://github.com/etcd-io/etcd)
+etcd ເຮັດໜ້າທີ່ເກັບຂໍ້ມູນຕ່າງໆຂອງ cluster ບໍ່ວ່າຈະເປັນຂໍ້ມູນຂອງ cluster ເອງ ແລະ ຂໍ້ມູນສະຖານະໃນຕອນທີ່ Kubernetes ກຳລັງເຮັດວຽກ ໃນເອກະສານສະບັບນີ້ etcd ຈະຖືກຕິດຕັ້ງທີ່ master node ແລະ ກຳນົດຄ່າໃຫ້ etcd ເຮັດວຽກໃນຮູບແບບ High Availability ແລະ ຄຳນຶງເຖິງຄວາມປອດໄພໃນການເຊື່ອມຕໍ່ ຫາກຕ້ອງການຂໍ້ມູນເພີ່ມເຕີມສາມາດເບິ່ງໄດ້ທີ່ [etcd](https://github.com/etcd-io/etcd)
 
 
-## เตรียม etcd binaries [all master node]
+## ກຽມ etcd binaries [all master node]
 ```
 {
 ETCD_VER=v3.4.13
@@ -16,7 +16,7 @@ mv etcd-${ETCD_VER}-linux-amd64/etcd* /usr/local/bin
 ETCDCTL_API=3 /usr/local/bin/etcdctl version
 }
 ```
-## เตรียม directory และ key pair ที่ใช้ในการทำงานของ etcd [all master node]
+## ກຽມ directory ແລະ key pair ທີ່ໃຊ້ໃນການເຮັດວຽກຂອງ etcd [all master node]
 ```
 {
 mkdir -p /etc/etcd /var/lib/etcd
@@ -24,7 +24,7 @@ mkdir -p /etc/etcd /var/lib/etcd
  cp ca.crt etcd-server.key etcd-server.crt /etc/etcd/
 }
 ```
-## เตรียมตัวแปรสำหรับสร้าง `etcd.service` [all master node]
+## ກຽມຕົວແປສຳລັບສ້າງ `etcd.service` [all master node]
 ```
 {
 INTERNAL_IP=$(ip addr show eth0 | grep "inet " | awk '{print $2}' | cut -d / -f 1)
@@ -32,8 +32,8 @@ ETCD_NAME=$(hostname -s)
 echo $INTERNAL_IP $ETCD_NAME
 }
 ```
-> eth0 เป็นชื่อ network interface card ซึ่งอาจจะต่างกันไป
-## สร้าง `etcd.service` สำหรับ systemd [all master node]
+> eth0 ເປັນຊື່ network interface card ເຊິ່ງອາດຈະແຕກຕ່າງກັນ
+## ສ້າງ `etcd.service` ສຳລັບ systemd [all master node]
 ```
 {
 cat <<EOF | sudo tee /etc/systemd/system/etcd.service
@@ -68,7 +68,7 @@ WantedBy=multi-user.target
 EOF
 }
 ```
-## เริ่มการทำงานของ etcd [all master node]
+## ເລີ່ມການເຮັດວຽກຂອງ etcd [all master node]
 ```
 {
  systemctl daemon-reload
@@ -77,7 +77,7 @@ EOF
 ```
 
 
-## ทดสอบการทำงานของ etcd [all master node]
+## ທົດສອບການເຮັດວຽກຂອງ etcd [all master node]
 ```
 ETCDCTL_API=3 etcdctl member list \
  --endpoints=https://127.0.0.1:2379 \
@@ -85,12 +85,12 @@ ETCDCTL_API=3 etcdctl member list \
  --cert=/etc/etcd/etcd-server.crt \
  --key=/etc/etcd/etcd-server.key
  ```
- > ผลการทดสอบ
+ > ຜົນການທົດສອບ
  ```
 41cf2dc7f859bfed, started, master2, https://192.168.254.63:2380, https://192.168.254.63:2379, false
 8283bd82ad10dcb8, started, master1, https://192.168.254.62:2380, https://192.168.254.62:2379, false
 fcae0ac3856fb516, started, master0, https://192.168.254.61:2380, https://192.168.254.61:2379, false
 ```
-**Next>** [ติดตั้ง Kubernetes Control Plane](08-install_kubernetes_control_plane.md)
+**Next>** [ຕິດຕັ້ງ Kubernetes Control Plane](08-install_kubernetes_control_plane.md)
 
-**<Prev** [โอนถ่ายไฟล์ที่สร้างไปยัง Virtual Machine](06-transfer-file.md)
+**<Prev** [ການຍ້າຍໄຟລທີ່ສ້າງໄປຍັງ Virtual Machine](06-transfer-file.md)
