@@ -1,26 +1,26 @@
-# ติดตั้ง DNS สำหรับ Services และ Pods
-ทุก services ที่ถูกสร้างภายใน Cluster จะได้มีชื่อนั้นถูกกำหนดใน DNS เช่นกัน ทำให้สามาถใช้ชื่อในการอ้างถึง service ได้โดยมีรูปแบบ `servicename.namespace.svc.cluster.local` ในเอกสารชุดนี้จะใช้ [CoreDNS](https://coredns.io/) ทำหน้าที่นี้
+# ຕິດຕັ້ງ DNS ສຳລັບ Services ແລະ Pods
+ທຸກ services ທີ່ຖືກສ້າງພາຍໃນ Cluster ຈະໄດ້ມີນັ້ນຖືກກຳນົດໃນ DNS ເຊັ່ນກັນ ເຮັດໃຫ້ສາມາດໃຊ້ຊື່ໃນການອ້າງເຖິງ service ໄດ້ໂດຍມີຮູບແບບ `servicename.namespace.svc.cluster.local` ໃນເອກະສານຊຸດນີ້ຈະໃຊ້ [CoreDNS](https://coredns.io/) ເຮັດໜ້າທີ່ນີ້
 
-## ติดตั้ง CoreDNS [master0]
+## ຕິດຕັ້ງ CoreDNS [master0]
 ```
 dnf install -y git jq
 git clone https://github.com/coredns/deployment.git
 cd deployment/kubernetes/
 ./deploy.sh -i 10.96.0.10 | kubectl apply -f -
 ```
-### ตรวจสอบการติดตั้งของ CoreDNS [master0]
+### ກວດສອບການຕິດຕັ້ງຂອງ CoreDNS [master0]
 ```
 kubectl get pods -n kube-system
 ```
-> ผลการทดสอบ จะพบ pod ชื่อว่า coredns-xxxxxxxxxx-xxxxx สถานะ Running อยู่
+> ຜົນການທົດສອບ ຈະເຫັນ pod ຊື່ວ່າ coredns-xxxxxxxxxx-xxxxx ສະຖານະ Running ຢູ່
 ```
 NAME                       READY   STATUS    RESTARTS   AGE
 coredns-7bf4bd64bd-zgtnf   1/1     Running   0          14s
 weave-net-c8wgm            2/2     Running   0          3m39s
 weave-net-lxwpn            2/2     Running   0          3m39s
 ```
-> จะพบว่ามี pod ที่ชื่อว่า coredns-xxxxxxxxxx-xxxxx สถานะ Running อยู่
-### ทดสอบการทำงานของ CoreDNS [master0]
+> ຈະເຫັນວ່າມີ pod ທີ່ຊື່ວ່າ coredns-xxxxxxxxxx-xxxxx ສະຖານະ Running ຢູ່
+### ທົດສອບການເຮັດວຽກຂອງ CoreDNS [master0]
 ```
 ]#  kubectl run dnstest --image centos -- sleep 36000
 pod/dnstest created
