@@ -1,13 +1,13 @@
-# สร้าง Data Encryption Config และ Key
-ข้อมูลที่ Kubernetes API Server เขียนข้อมูลเก็บไว้ใน etcd server ในการเรียกใช้งาน Kubernetes API Server สามารถกำหนดให้เข้ารหัสลับข้อมูลที่ถูกจัดเก็บได้ เพื่อป้องกันข้อผิดพลาดที่อาจจะมีการเข้าถึงข้อมูลที่ etcd server โดยตรง ดังนั้งจึงต้องสร้าง Key เพื่อใช้ในการเข้ารหัสลับ, เก็บ key ไว้ที่ object ที่ชื่อว่า EncryptionConfig และ กำหนดให้ kube-apiserver เรียกใช้ EncryptionConfig ด้วย option  `--encryption-provider-config`
-## สร้าง Key ที่ใช้ในการเข้ารหัส
-ในการสร้าง Key จะใช้วิธีการอ่านข้อมูลจาก /dev/urandom และ encode ด้วย base64
+# ສ້າງ Data Encryption Config ແລະ Key
+ຂໍ້ມູນທີ່ Kubernetes API Server ຂຽນຂໍ້ມູນເກັບໄວ້ໃນ etcd server ໃນການເອີ້ນໃຊ້ງານ Kubernetes API Server ສາມາດກຳນົດໃຫ້ເຂົ້າລະຫັດລັບຂອງຂໍ້ມູນທີ່ຈັດເກັບໄວ້ໄດ້ ເພື່ອປ້ອງກັນຂໍ້ຜິດພາດທີ່ອາດຈະມີການເຂົ້າເຖິງຂໍ້ມູນ etcd server ໂດຍກົງ ດັ່ງນັ້ນຈຶ່ງຕ້ອງສ້າງ Key ເພື່ອໃຊ້ໃນການເຂົ້າລະຫັດ, ເກັບ key ໄວ້ທີ່ object ທີ່ຊື່ວ່າ EncryptionConfig ແລະ ກຳນົດໃຫ້ kube-apiserver ເອີ້ນໃຊ້ EncryptionConfig ດ້ວຍ option  `--encryption-provider-config`
+## ສ້າງ Key ທີ່ໃຊ້ໃນການເຂົ້າລະຫັດ
+ໃນການສ້າງ Key ຈະໃຊ້ວິທີການອ່ານຂໍ້ມູນຈາກ /dev/urandom ແລະ encode ດ້ວຍ base64
 ```
 {
 ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
 }
 ```
-## สร้าง EncryptionConfig
+## ສ້າງ EncryptionConfig
 ```
 {
 cat > encryption-config.yaml <<EOF
@@ -25,6 +25,6 @@ resources:
 EOF
 }
 ```
-**Next>** [เคล็ดไม่ลับ เล็ก ๆ น้อย ๆ](05-tip-n-trick.md)
+**Next>** [ເຄັດບໍ່ລັບ ທີ່ຄວນຮູ້ໄວ້ເປັນດີ](05-tip-n-trick.md)
 
-**<Prev** [สร้าง Kubernetes Configuration Files สำหรับ Authentication](03-generating-kubenetes-configuration-file.md)
+**<Prev** [ສ້າງ Kubernetes Configuration Files ສຳລັບ Authentication](03-generating-kubenetes-configuration-file.md)
