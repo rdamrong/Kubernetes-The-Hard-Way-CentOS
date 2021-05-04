@@ -276,7 +276,7 @@ mv kubernetes-key.pem kube-apiserver.key
 mv kubernetes.pem kube-apiserver.crt
 }
 ```
-### สร้าง Service Accouht Key Pair
+### สร้าง Service Account Key Pair
 ```
 {
 
