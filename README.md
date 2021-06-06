@@ -44,7 +44,7 @@
 [15. ทดสอบการทำงาน](docs/15-test.md)
 
 # ขอบคุณ
-- ขอบคุณโอกาสที่ได้เรียนรู้จาก MFEC Public Company Limtied
+- ขอบคุณโอกาสที่ได้เรียนรู้จาก MFEC Public Company Limited
 - ขอบคุณ @Sirinat Oam Paphatsirinatthi และ @Saritrat Jirakulphondchai จาก @KubeOps Skills ที่พาเดินก้าวแรกให้เรียนรู้
 - ขอบคุณ @Sukkarin ที่เป็นเพื่อนคุย เพื่อนคิด ช่วยหาคำตอบตอนที่คิดไม่ออก
 - ขอบคุณทุกคนที่เป็นกำลังใจ และฟังเสียงบ่นใน Facebook
