@@ -10,9 +10,9 @@ for i in 192.168.254.61 192.168.254.62 192.168.254.63; do
 done
 
 for i in 192.168.254.64 192.168.254.65; do
+    echo "Copy kube-proxy.kubeconfig to $i"
     scp kube-proxy.kubeconfig root@${i}:~/
 done
-
 
 scp ca.crt node0.crt node0.key node0.kubeconfig root@192.168.254.64:~/
 scp ca.crt node1.crt node1.key node1.kubeconfig root@192.168.254.65:~/
