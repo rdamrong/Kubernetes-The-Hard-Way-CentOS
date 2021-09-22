@@ -5,7 +5,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 # รายละเอียดของ Kubernetes Cluster
-- Kubernetes 1.19.2
+- Kubernetes 1.22.2
 - Docker 19.3.13
 - cni v0.8.7
 - etcd v3.4.13
